@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr. Julio Vieira · Resultados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 3rem 1.25rem
+        }
+
+        .item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch
+        }
+
+        .photo {
+            width: calc(100% - 12px)
+        }
+
+        .btn-agendar {
+            width: calc(100% - 12px);
+            margin-left: 6px;
+            margin-right: 6px
+        }
+
+        header {
+            text-align: center
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem
+        }
+
+        :root {
+            --bg: #060f0b;
+            --green: #0b3a26;
+            --green2: #0d4a30;
+            --gold1: #e8c98a;
+            --gold2: #c9a35a;
+            --gold3: #9c7633;
+            --cream: #f1e8d6;
+            --muted: #a9b3ad
+        }
+
+        body {
+            background: radial-gradient(ellipse at top, #0e3a26 0%, var(--bg) 55%);
+            background-color: var(--bg);
+            color: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh
+        }
+
+        h1 {
+            margin: 0 0 .5rem;
+            font-size: clamp(2rem, 7vw, 2.6rem) !important;
+            font-family: "Times New Roman", Georgia, serif;
+            font-weight: 700;
+            font-size: 2.6rem;
+            color: var(--cream)
+        }
+
+        .sub {
+            color: var(--gold2);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: .95rem
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .divider {
+            width: 90px;
+            height: 2px;
+            margin: 1.5rem auto;
+            background: linear-gradient(90deg, transparent, var(--gold2), transparent)
+        }
+
+        .item {
+            margin-bottom: 2.5rem
+        }
+
+        .photo {
+            position: relative;
+            display: block;
+            border-radius: 22px;
+            overflow: hidden;
+            margin: 0 6px;
+            border: 2px solid var(--gold2);
+            box-shadow: 0 0 0 6px var(--green), 0 18px 40px rgba(0, 0, 0, .6)
+        }
+
+        .photo img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s
+        }
+
+        .photo:hover img {
+            transform: scale(1.04)
+        }
+
+        .photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(6, 15, 11, .6))
+        }
+
+        .play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background: rgba(6, 15, 11, .6);
+            border: 2px solid var(--gold1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            backdrop-filter: blur(3px);
+            transition: transform .3s
+        }
+
+        .photo:hover .play {
+            transform: translate(-50%, -50%) scale(1.1)
+        }
+
+        .play svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--gold1);
+            margin-left: 5px
+        }
+
+        .badge-vid {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 2;
+            background: rgba(6, 15, 11, .7);
+            border: 1px solid var(--gold2);
+            color: var(--gold1);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: .75rem;
+            letter-spacing: .1em
+        }
+
+        .btn-agendar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 1.2rem;
+            padding: 1.1rem 1.5rem;
+            border-radius: 18px;
+            background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
+            color: #0a1f15;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            transition: filter .2s, transform .2s
+        }
+
+        .btn-agendar:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            color: #0a1f15
+        }
+
+        .btn-agendar svg {
+            width: 24px;
+            height: 24px;
+            fill: #0a1f15
+        }
+
+        footer {
+            border-top: 1px solid #1d2a24;
+            color: var(--muted)
+        }
+
+        .photo {
+            width: calc(100% - 12px) !important
+        }
+
+        .btn-agendar {
+            width: calc(100% - 12px) !important;
+            margin-left: 6px !important;
+            margin-right: 6px !important
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container wrap py-5 px-3">
+        <header class="text-center mb-4">
+            <h1>Dr. Julio Vieira</h1>
+            <p class="sub mb-2">Resultados em vídeo</p>
+            <p class="muted mb-0">Toque na imagem para assistir no Instagram</p>
+            <div class="divider"></div>
+        </header>
+        <section class="item">
+            <a class="photo" href="https://www.instagram.com/p/DJAeX5zta9S/?hl=pt-br" target="_blank" rel="noopener"
+                aria-label="Assistir vídeo 1 no Instagram">
+                <img src="../img/caso1.png" alt="Resultado 1 - Dr. Julio Vieira">
+                <span class="badge-vid">VÍDEO</span>
+                <span class="play"><svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg></span>
+            </a>
+            <a class="btn-agendar" href="https://wa.me/5571999979902" target="_blank" rel="noopener"><svg
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.8 13.5 3.8 12 3.8 7.5 7.5 3.8 12 3.8s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z" />
+                </svg>Agendar consulta</a>
+        </section>
+        <section class="item">
+            <a class="photo" href="https://www.instagram.com/p/DTbMJSPgTtr/?hl=pt-br" target="_blank" rel="noopener"
+                aria-label="Assistir vídeo 2 no Instagram">
+                <img src="../img/caso2.png" alt="Resultado 2 - Dr. Julio Vieira">
+                <span class="badge-vid">VÍDEO</span>
+                <span class="play"><svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg></span>
+            </a>
+            <a class="btn-agendar" href="https://wa.me/5571999979902" target="_blank" rel="noopener"><svg
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.8 13.5 3.8 12 3.8 7.5 7.5 3.8 12 3.8s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z" />
+                </svg>Agendar consulta</a>
+        </section>
+        <section class="item">
+            <a class="photo" href="https://www.instagram.com/p/DL0y_GEM1M6/?hl=pt-br" target="_blank" rel="noopener"
+                aria-label="Assistir vídeo 3 no Instagram">
+                <img src="../img/caso3.png" alt="Resultado 3 - Dr. Julio Vieira">
+                <span class="badge-vid">VÍDEO</span>
+                <span class="play"><svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg></span>
+            </a>
+            <a class="btn-agendar" href="https://wa.me/5571999979902" target="_blank" rel="noopener"><svg
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.8 13.5 3.8 12 3.8 7.5 7.5 3.8 12 3.8s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z" />
+                </svg>Agendar consulta</a>
+        </section>
+
+    </main>
+    <footer class="text-center py-4 small">@intercaphair · Salvador-BA</footer>
+</body>
+
+</html>
